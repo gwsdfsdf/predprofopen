@@ -9,17 +9,17 @@ flag - флаг для проверки наличия песен у автор�
 from csv import reader
 
 with open('/home/student/songs.csv') as data_file:
-    songs_data=reader(data_file, delimiter = ';')
-    artist_name=input()
-    while artist_name !='0':
-            for item in songs_data:
-                flag=0
-                if item[1] == artist_name:
-                    flag=1
-                    print("У",artist_name,"найдена песня:",item[2])
-                    artist_name=input()
-            if artist_name=="0":
-                break
-            if flag==0:
-                print("К сожалению, ничего не удалось найти")
-                break
+    songs_data = reader(data_file, delimiter=';')
+    artist_name = input()
+    while artist_name != '0':
+        for item in songs_data:
+            flag = 0
+            if item[1] == artist_name:
+                flag = 1
+                print("У", artist_name, "найдена песня:", item[2])
+                artist_name = input()
+        if artist_name == "0":
+            break
+        if flag == 0:
+            print("К сожалению, ничего не удалось найти")
+            break
